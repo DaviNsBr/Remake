@@ -1,54 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Clube de Energéticos</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube de Energéticos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-      .button {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 10px;
-        border-radius: 5px;
-        background-color: #0f68ee;
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.2s;
-      }
+    .container {
+      text-align: center;
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-      .button:hover {
-        background-color: #327ef0;
-      }
+    h1 {
+      color: #327ef0;
+    }
 
-      .section-link {
-        text-decoration: none;
-        color: #327ef0;
-      }
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
 
-      .section-link:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Bem vindo ao site</h1>
-    <p>
-      Por favor, faça seu cadastro para obter mais informações
-    </p>
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #327ef0;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #285f9d;
+    }
+
+    .section-links {
+      margin-top: 20px;
+    }
+
+    .section-link {
+      text-decoration: none;
+      color: #327ef0;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .section-link:hover {
+      color: #285f9d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao Clube de Energéticos</h1>
+    <p>Junte-se a nós para descobrir tudo sobre os energéticos e ficar por dentro das últimas novidades.</p>
     <form>
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
-      <label for="password">Password:</label><br />
-      <input type="password" id="password" name="password" required /><br />
-      <input type="submit" class="button" value="Register" />
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="password">Senha:</label><br>
+      <input type="password" id="password" name="password" required><br>
+      <input type="submit" value="Cadastrar">
     </form>
-    <p>
-      Veja aqui sobre os tópicos transcritos:
-    </p>
-    <p>
+    <div class="section-links">
+      <p>Explore nossos tópicos mais populares:</p>
       <a href="#energetics" class="section-link">Energéticos</a>
-      <a href="#types" class="section-link">Types</a>
-      <a href="#contraindications" class="section
+      <a href="#types" class="section-link">Tipos</a>
+      <a href="#contraindications" class="section-link">Contraindicações</a>
+    </div>
+  </div>
+</body>
+</html>
