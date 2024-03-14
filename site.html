@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clube de Energéticos</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      text-align: center;
-      max-width: 400px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube de Energéticos</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+  
+      .container {
+        text-align: center;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4;
     }
 
     h1 {
@@ -51,7 +51,7 @@
       color: #fff;
       border: none;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3;
     }
 
     input[type="submit"]:hover {
@@ -72,9 +72,30 @@
     .section-link:hover {
       color: #285f9d;
     }
+    #overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 128, 0, 1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
+    <div id="overlay">
+        <p>Cadastro concluído com sucesso!</p>
+      </div>
   <div class="container">
     <h1>Bem-vindo ao Clube de Energéticos</h1>
     <p>Junte-se a nós para descobrir tudo sobre os energéticos e ficar por dentro das últimas novidades.</p>
@@ -92,5 +113,24 @@
       <a href="#contraindications" class="section-link">Contraindicações</a>
     </div>
   </div>
+  <div class="overlay">
+    <p id="success-message" style="display:none; color: green;">Cadastro concluído com sucesso!</p>
+  </div>
+  <script>
+    const form = document.querySelector('form');
+  const overlay = document.getElementById('overlay');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    overlay.style.display = 'flex';
+    setTimeout(() => {
+      overlay.style.backgroundColor = 'rgba(0, 128, 0, 0)';
+    }, 1500);
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 1500);
+  });
+  </script>
 </body>
+</html>
 </html>
