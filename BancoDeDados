@@ -1,0 +1,28 @@
+CREATE TABLE energy_drinks (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    can_color VARCHAR(255),
+    suitable_health_conditions VARCHAR(255)
+);
+
+INSERT INTO energy_drinks (id, name, can_color, suitable_health_conditions)
+VALUES 
+(1, 'RedBull', 'Coloridas', 'Sem problemas cardíacos, Livres de problemas com glúten, Sem alergias a componentes das bebidas energéticas'),
+(2, 'Monster', 'Mais neutras e padronizadas', 'Sem problemas cardíacos, Livres de problemas com glúten, Sem alergias a componentes das bebidas energéticas'),
+(3, 'RoxxEnergy', 'Mais neutras e padronizadas', 'Sem problemas cardíacos, Livres de problemas com glúten, Sem alergias a componentes das bebidas energéticas');
+
+CREATE TABLE consumers (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    allowed_energy_drinks INT,
+    health_condition VARCHAR(255),
+    quantity_of_consumption INT,
+    areas_of_interest VARCHAR(255),
+    FOREIGN KEY (allowed_energy_drinks) REFERENCES energy_drinks(id)
+);
+
+INSERT INTO consumers (id, name, age, allowed_energy_drinks, health_condition, quantity_of_consumption, areas_of_interest)
+VALUES 
+(1, 'John Doe', 25, 1, 'Sem problemas cardíacos, Livres de problemas com glúten, Sem alergias a componentes das bebidas energéticas', 5, 'E-sports'),
+(2, 'Jane Doe', 30, 2, 'Sem problemas cardíacos, Livres de problemas com
